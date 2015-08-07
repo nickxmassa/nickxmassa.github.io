@@ -1,0 +1,57 @@
+body {
+	background: #fafafa;
+	color: #333;
+	font-family: Verdana;
+	border-top: 10px solid #1ea8ff;
+	margin: 0;
+	font-size: 16px;
+}
+
+.PageWrapper {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+h1 {
+	font-size: 40px;
+	font-family: Impact;
+	text-transform: uppercase;
+	background: #1ea8ff;
+	color: #ffffff;
+	letter-spacing: 2px;
+	text-align: center;
+	padding: 10px;
+
+	/* this is an example of css vendor prefixes for CSS3 declarations */
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+}
+
+a {
+	color: #1ea8ff;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+.caption {
+	font-size: 13px;
+	color: #888;
+}
+
+/* 	
+this is an example of a media query
+when the browser window is less then 800px the border top color
+changes to the color '#ff2c76'
+*/
+@media (max-width: 800px) {
+	body {
+		border-top-color: #ff2c76;
+	}
+}
