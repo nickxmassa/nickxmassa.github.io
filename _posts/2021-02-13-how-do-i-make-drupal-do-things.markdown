@@ -16,13 +16,13 @@ Turns out the answer starts in the same place as the last one – with Drupal’
 ### What is a Drupal hook?
 To start thinking of hooks, let’s think of them in the context of creating a new node (the content type doesn’t matter). When you click “Save” on that piece of content, Drupal responds by firing off a number of instructions to prepare the site to save that node. Some examples are: 
 
-- Hook_entity_presave
-- Hook_entity_create
-- Hook_entity_insert
+- `Hook_entity_presave()`
+- `Hook_entity_create()`
+- `Hook_entity_insert()`
 
-And these are just a few. Drupal’s API reference has the full list of entity hooks, as well as hooks provided by other modules. But let’s look at one of these in more detail, say, hook_entity_presave.
+And these are just a few. Drupal’s API reference has the full list of entity hooks, as well as hooks provided by other modules. But let’s look at one of these in more detail, say, `hook_entity_presave()`.
 
-The description for hook_entity_presave says it “Act[s] on an entity before it is created or updated.” What this means is if you write code in a function called mymodule_entity_presave(), Drupal will find that code and any other functions using that hook (remember, Drupal already found all the modules earlier on in the bootstrap process) and trigger the code to run before the node saves. Similarly, if you want code to run after a node is saved in the database, you can write it in a function called mymodule_entity_insert().
+The description for hook_entity_presave says it “Act[s] on an entity before it is created or updated.” What this means is if you write code in a function called `mymodule_entity_presave()`, Drupal will find that code and any other functions using that hook (remember, Drupal already found all the modules earlier on in the bootstrap process) and trigger the code to run before the node saves. Similarly, if you want code to run after a node is saved in the database, you can write it in a function called `mymodule_entity_insert()`.
 
 And that’s it! Like we said, that’s not the only way to get Drupal to load code, but it’s a good example of how Drupal does it. Before I understood this, I simply could not understand how Drupal just “magically” knew what code to run when. Even when other developers showed me how to write hooks, it took me a long time to realize that, in a manner of speaking, Drupal triggers every hook every time it loads a page and it’ll run any code you give it as long as you tell it to do so at after certain trigger.
 
